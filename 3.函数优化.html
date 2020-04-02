@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 在ES6以前，我们无法给一个函数参数设置默认值，只能采用变通写法
+        function add(a, b){
+            // 判断b是否为空，为空就给默认值
+            b = b || 1;
+            return a + b;
+        }
+        console.log(10); // 11
+
+        // 现在可以这么写
+        function add2(a, b=1){
+            return a + b;
+        }
+
+
+        // 不定参数
+        function fun(...values){
+            console.log(values.length);
+        }
+        fun(1,2) // 2
+        fun(1,2,3,4,5) // 5
+
+
+        // 箭头函数
+        // 以前声明一个方法
+        var print = function (obj){
+            console.log(obj);
+        }
+        // 现在声明一个方法
+        var print = obj => console.log(obj);
+        print("hello");
+
+        var sum = function(a, b){
+            c = a + b;
+            return a + c;
+        }
+
+        var sum2 = (a, b) => a + b;
+        var sum3 = (a, b) => {
+            c = a + b;
+            return a + c;
+        }
+    </script>
+</body>
+</html>

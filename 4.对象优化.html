@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1
+        const person = {
+            name: "java",
+            age: 21,
+            language: ['java', 'js', 'css']
+        }
+
+        console.log(Object.keys(person)); // ["name", "age", "language"]
+        console.log(Object.values(person)); // ["java", 21, Array(3)]
+        console.log(Object.entries(person)); // [Array(2), Array(2), Array(2)]
+
+        // 2
+        const target = { a: 1 };
+        const source1 = { b: 2 };
+        const source2 = { c: 3 };
+
+        Object.assign(target, source1, source2);
+        console.log(target) // {a:1, b:2, c:3}
+
+        // 声明对象简写
+        const age = 22;
+        const name = "张三"
+
+        const person1 = { age: age, name: name } // {age:22, name:"张三"}
+        const person2 = { age, name } // {age:22, name:"张三"}
+
+
+
+    </script>
+</body>
+
+</html>
