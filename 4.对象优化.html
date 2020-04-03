@@ -34,9 +34,41 @@
 
         const person1 = { age: age, name: name } // {age:22, name:"张三"}
         const person2 = { age, name } // {age:22, name:"张三"}
+        console.log(person1);
+        console.log(person2)
+
+        //3. 对象的函数属性简写
+        let person3 = {
+            name: "jack",
+            // 以前
+            eat: function (food) {
+                console.log(this.name + "在吃" + food);
+            },
+            // 箭头函数this不能使用，对象。属性
+            eat2: food => console.log(person3.name + "在吃" + food),
+            eat3(food) {
+                console.log(this.name + "在吃" + food);
+            }
+
+        }
+
+        person3.eat("香蕉");
+        person3.eat2("苹果");
+        // person3.eat3("橘子");
 
 
+        // 4.对象扩展运算符
+        // 拷贝对象(深拷贝)
+        let p1 = { name: "Amy", age: 15 };
+        let someone = { ...p1 };
+        console.log(someone); // {name: "Amy", age: 15}
 
+        // 合并对象
+        let age1 = { age: 15, sex: "F" };
+        let name1 = { name: "Amy", house: "bieye" };
+        let p2 = {name: "zhangsan"};
+        let p2 = { ...age1, ...name1 } // { age: 15, sex: "F" ,name: "Amy", house: "bieye"} amy会覆盖张三的值
+        console.log(p2);
     </script>
 </body>
 
